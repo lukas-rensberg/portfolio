@@ -1,0 +1,284 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'fira-code';
+    src: url('./fonts/FiraCode.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'karla';
+    src: url('./fonts/Karla.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(60deg, #1c1c1c 23%, #08463b 100%);
+    color: #fff;
+    padding: 24px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+@supports (height: 100dvh) {
+    header {
+        height: 100dvh;
+    }
+}
+
+.topbar {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    font-family: 'fira-code', 'sans-serif';
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 25px 50px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent);;
+}
+
+.hero_title_container {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: 'fira-code', 'sans-serif';
+}
+
+.hero_title_container span {
+    font-size: 40px;
+}
+
+.hero_title {
+    font-family: 'karla', 'sans-serif';
+    margin: 0;
+    font-size: 90px;
+}
+
+.nav_left {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.lang_switch {
+    display: inline-flex;
+    border: 1px solid #1fd7b2;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.lang_link {
+    color: #1fd7b2;
+    background: transparent;
+    border: 0;
+    text-decoration: none;
+    padding: 6px 1rem;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    font-family: 'fira-code', 'sans-serif';
+}
+
+.lang_link:hover {
+    background: rgba(31, 215, 178, 0.12);
+}
+
+.lang_link:focus-visible {
+    outline: 2px solid #1fd7b2;
+    outline-offset: -2px;
+}
+
+.lang_link.active {
+    background: #1fd7b2;
+    color: #fff;
+    font-weight: bold;
+}
+
+.nav_links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.navbar_link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.logo_swap {
+    position: relative;
+    display: inline-block;
+    height: 48px;
+    overflow: hidden;
+}
+
+.logo_img {
+    display: block;
+    height: 48px;
+    width: auto;
+}
+
+.logo_base {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transition: clip-path 450ms ease, opacity 220ms ease;
+}
+
+.logo_overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 450ms ease, opacity 220ms ease;
+}
+
+.logo_swap:hover .logo_base,
+.logo_swap:focus-visible .logo_base {
+    opacity: 0;
+    clip-path: inset(0 0 0 100%);
+}
+
+.logo_swap:hover .logo_overlay,
+.logo_swap:focus-visible .logo_overlay {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+}
+
+
+@keyframes staticExit {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes flowCycle {
+    0%,
+    22% {
+        transform: translate3d(0, 0, 0);
+        opacity: 0;
+    }
+
+    26% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+
+    74% {
+        transform: translate3d(-100%, 0, 0);
+        opacity: 1;
+    }
+
+    79% {
+        transform: translate3d(-100%, 0, 0);
+        opacity: 0;
+    }
+
+    80% {
+        transform: translate3d(0, 0, 0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 0;
+    }
+}
+
+.marquee-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: auto;
+    max-width: 100%;
+}
+
+.marquee-button {
+    margin-top: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    border-radius: 30px;
+    padding: 8px 16px;
+    background: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    text-align: center;
+    width: auto;
+    text-decoration: none;
+}
+
+.marquee-button span {
+    font-size: 24px;
+    font-family: "karla",'fira-code', 'sans-serif';
+}
+
+.marquee-track {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    line-height: 1.25;
+}
+
+.marquee-static {
+    position: relative;
+    display: inline-block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.marquee-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    transform: translate3d(0, 0, 0);
+    padding-left: 100%;
+    opacity: 0;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+}
+
+.marquee-button:hover .marquee-static,
+.marquee-button:focus-visible .marquee-static {
+    animation: staticExit 1s ease-out forwards;
+}
+
+.marquee-button:hover .marquee-content,
+.marquee-button:focus-visible .marquee-content {
+    animation: flowCycle 3.8s linear infinite;
+    animation-delay: 0.9s;
+}

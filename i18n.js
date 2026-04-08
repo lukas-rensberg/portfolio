@@ -24,3 +24,5 @@ const TRANSLATIONS = {
         'cta.contact': 'Contact me'
     }
 };
+
+export default TRANSLATIONS;

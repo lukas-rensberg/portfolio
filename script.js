@@ -1,3 +1,5 @@
+import TRANSLATIONS from "./i18n.js";
+
 const LANGUAGE_STORAGE_KEY = 'siteLang';
 const SUPPORTED_LANGUAGES = ['de', 'en'];
 

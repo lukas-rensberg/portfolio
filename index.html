@@ -9,45 +9,49 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-<header>
-    <div class="topbar">
-        <div class="nav_left">
-            <div class="lang_switch" role="group" aria-label="Sprachauswahl" data-i18n-aria-label="ui.languageSwitch">
-                <button type="button" class="lang_link" data-lang="en" aria-pressed="false">EN</button>
-                <button type="button" class="lang_link active" data-lang="de" aria-pressed="true">DE</button>
-            </div>
-            <nav class="nav_links" aria-label="Hauptnavigation" data-i18n-aria-label="ui.mainNavigation">
-                <a href="#about" class="navbar_link" data-i18n="nav.about">About me</a>
-                <a href="#skills" class="navbar_link" data-i18n="nav.skills">Skills</a>
-                <a href="#projects" class="navbar_link" data-i18n="nav.projects">Projects</a>
-            </nav>
+<header class="topbar">
+    <div class="nav_left">
+        <div class="lang_switch" role="group" aria-label="Sprachauswahl" data-i18n-aria-label="ui.languageSwitch">
+            <button type="button" class="lang_link" data-lang="en" aria-pressed="false">EN</button>
+            <button type="button" class="lang_link active" data-lang="de" aria-pressed="true">DE</button>
         </div>
-        <a href="#" class="logo_swap" aria-label="Zur Startseite" data-i18n-aria-label="ui.homeLink">
-            <img class="logo_img logo_base" src="./img/lr-logo-white.png"
-                 alt="Logo mit einem weißen L und R ineinander sowie dem Text Lukas Rensberg">
-            <img class="logo_img logo_overlay" src="./img/lr-logo-white-outline.png" alt="" aria-hidden="true">
+        <nav class="nav_links" aria-label="Hauptnavigation" data-i18n-aria-label="ui.mainNavigation">
+            <a href="#about" class="navbar_link" data-i18n="nav.about">About me</a>
+            <a href="#skills" class="navbar_link" data-i18n="nav.skills">Skills</a>
+            <a href="#projects" class="navbar_link" data-i18n="nav.projects">Projects</a>
+        </nav>
+    </div>
+    <a href="#" class="logo_swap" aria-label="Zur Startseite" data-i18n-aria-label="ui.homeLink">
+        <img class="logo_img logo_base" src="./img/lr-logo-white.png"
+             alt="Logo mit einem weißen L und R ineinander sowie dem Text Lukas Rensberg">
+        <img class="logo_img logo_overlay" src="./img/lr-logo-white-outline.png" alt="" aria-hidden="true">
+    </a>
+</header>
+<section class="atf">
+    <span data-i18n="hero.role">Frontend-Developer</span>
+    <h1 class="hero_title">Lukas Rensberg</h1>
+    <div class="marquee-container">
+        <a href="#projects" class="marquee-button">
+            <span class="marquee-track">
+                <span class="marquee-static" data-i18n="cta.work">Check my work</span>
+                <span class="marquee-content" data-i18n="cta.work">Check my work</span>
+            </span>
+        </a>
+        <a href="#" class="marquee-button">
+            <span class="marquee-track">
+                <span class="marquee-static" data-i18n="cta.contact">Contact me</span>
+                <span class="marquee-content" data-i18n="cta.contact">Contact me</span>
+            </span>
         </a>
     </div>
-    <div class="hero_title_container">
-        <span data-i18n="hero.role">Frontend-Developer</span>
-        <h1 class="hero_title">Lukas Rensberg</h1>
-        <div class="marquee-container">
-            <a href="#projects" class="marquee-button">
-                <span class="marquee-track">
-                    <span class="marquee-static" data-i18n="cta.work">Check my work</span>
-                    <span class="marquee-content" data-i18n="cta.work">Check my work</span>
-                </span>
-            </a>
-            <a href="#" class="marquee-button">
-                <span class="marquee-track">
-                    <span class="marquee-static" data-i18n="cta.contact">Contact me</span>
-                    <span class="marquee-content" data-i18n="cta.contact">Contact me</span>
-                </span>
-            </a>
-        </div>
-    </div>
-</header>
 
+    <div class="marquee-full-length">
+
+    </div>
+</section>
+<section class="">
+    About me
+</section>
 
 
 <script type="module" src="./script.js"></script>

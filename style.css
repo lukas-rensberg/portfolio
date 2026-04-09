@@ -2,6 +2,8 @@ html,
 body {
     margin: 0;
     padding: 0;
+    color: #fff;
+    background: rgba(28, 28, 28, 1);
 }
 
 * {
@@ -24,23 +26,14 @@ body {
 
 header {
     width: 100%;
-    height: 100vh;
-    position: relative;
     background: linear-gradient(60deg, #1c1c1c 23%, #08463b 100%);
     color: #fff;
-    padding: 24px 40px;
     display: flex;
-    flex-direction: column;
-}
-
-@supports (height: 100dvh) {
-    header {
-        height: 100dvh;
-    }
+    flex-direction: row;
 }
 
 .topbar {
-    position: absolute;
+    position: fixed;
     z-index: 2;
     display: flex;
     align-items: center;
@@ -54,7 +47,7 @@ header {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent);;
 }
 
-.hero_title_container {
+.atf {
     position: absolute;
     inset: 0;
     z-index: 1;
@@ -65,9 +58,10 @@ header {
     align-items: center;
     gap: 10px;
     font-family: 'fira-code', 'sans-serif';
+    background: linear-gradient(60deg, #1c1c1c 23%, #08463b 100%);
 }
 
-.hero_title_container span {
+.atf span {
     font-size: 40px;
 }
 
@@ -281,4 +275,9 @@ header {
 .marquee-button:focus-visible .marquee-content {
     animation: flowCycle 3.8s linear infinite;
     animation-delay: 0.9s;
+}
+
+.marquee-full-length {
+    backdrop-filter: blur(4px);
+    background: #606060;
 }

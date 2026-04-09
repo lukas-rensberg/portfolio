@@ -8,6 +8,7 @@ body {
 
 * {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 @font-face {
@@ -47,10 +48,10 @@ header {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent);;
 }
 
-.atf {
-    position: absolute;
+section.atf {
+    --atf-min-height: 100vh;
+    position: relative;
     inset: 0;
-    z-index: 1;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -59,6 +60,15 @@ header {
     gap: 10px;
     font-family: 'fira-code', 'sans-serif';
     background: linear-gradient(60deg, #1c1c1c 23%, #08463b 100%);
+    overflow: hidden;
+    min-height: var(--atf-min-height);
+    width: 100%;
+}
+
+@supports (min-height: 100dvh) {
+    .atf {
+        --atf-min-height: 100dvh;
+    }
 }
 
 .atf span {
@@ -207,6 +217,16 @@ header {
     }
 }
 
+@keyframes staticMarquee {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 .marquee-container {
     display: flex;
     flex-direction: row;
@@ -277,7 +297,42 @@ header {
     animation-delay: 0.9s;
 }
 
-.marquee-full-length {
+.status-line-band {
     backdrop-filter: blur(4px);
-    background: #606060;
+    background: rgba(255, 255, 255, 0.12);
+    box-sizing: border-box;
+    width: 100vw;
+    height: 65px;
+    position: absolute;
+    bottom: 50px;
+    transform: rotate(-3deg);
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.status-line {
+    display: inline-flex;
+    align-items: center;
+    width: max-content;
+    height: 100%;
+    font-family: 'karla', sans-serif;
+    color: #3dcfb6;
+    animation: staticMarquee 15s linear infinite;
+}
+
+.status-line-segment {
+    display: inline-flex;
+    align-items: center;
+}
+
+.status-line-text {
+    font-size: 40px;
+    line-height: 1;
+}
+
+.status-line-dot {
+    font-size: 50px;
+    line-height: 1;
+    margin-left: 55px;
+    margin-right: 55px;
 }

@@ -37,7 +37,7 @@
                 <span class="marquee-content" data-i18n="cta.work">Check my work</span>
             </span>
         </a>
-        <a href="#" class="marquee-button">
+        <a href="#contact" class="marquee-button">
             <span class="marquee-track">
                 <span class="marquee-static" data-i18n="cta.contact">Contact me</span>
                 <span class="marquee-content" data-i18n="cta.contact">Contact me</span>
@@ -48,22 +48,36 @@
     <div class="status-line-band">
         <span class="status-line">
             <span class="status-line-segment">
-                <span class="status-line-text" data-i18n="statusline.remote">Available for remote work</span><span class="status-line-dot" aria-hidden="true">·</span><span class="status-line-text" data-i18n="statusline.role">Frontend Developer</span><span class="status-line-dot" aria-hidden="true">·</span><span class="status-line-text" data-i18n="statusline.location">Based in Göttingen</span><span class="status-line-dot" aria-hidden="true">·</span><span class="status-line-text" data-i18n="statusline.openToWork">Open to work</span><span class="status-line-dot" aria-hidden="true">·</span>
+                <span class="status-line-text" data-i18n="statusline.remote">Available for remote work</span><span
+                    class="status-line-dot" aria-hidden="true">·</span><span class="status-line-text"
+                                                                             data-i18n="statusline.role">Frontend Developer</span><span
+                    class="status-line-dot" aria-hidden="true">·</span><span class="status-line-text"
+                                                                             data-i18n="statusline.location">Based in Göttingen</span><span
+                    class="status-line-dot" aria-hidden="true">·</span><span class="status-line-text"
+                                                                             data-i18n="statusline.openToWork">Open to work</span><span
+                    class="status-line-dot" aria-hidden="true">·</span>
             </span>
             <span class="status-line-segment" aria-hidden="true">
-                <span class="status-line-text" data-i18n="statusline.remote">Available for remote work</span><span class="status-line-dot" aria-hidden="true">·</span><span class="status-line-text" data-i18n="statusline.role">Frontend Developer</span><span class="status-line-dot" aria-hidden="true">·</span><span class="status-line-text" data-i18n="statusline.location">Based in Göttingen</span><span class="status-line-dot" aria-hidden="true">·</span><span class="status-line-text" data-i18n="statusline.openToWork">Open to work</span><span class="status-line-dot" aria-hidden="true">·</span>
+                <span class="status-line-text" data-i18n="statusline.remote">Available for remote work</span><span
+                    class="status-line-dot" aria-hidden="true">·</span><span class="status-line-text"
+                                                                             data-i18n="statusline.role">Frontend Developer</span><span
+                    class="status-line-dot" aria-hidden="true">·</span><span class="status-line-text"
+                                                                             data-i18n="statusline.location">Based in Göttingen</span><span
+                    class="status-line-dot" aria-hidden="true">·</span><span class="status-line-text"
+                                                                             data-i18n="statusline.openToWork">Open to work</span><span
+                    class="status-line-dot" aria-hidden="true">·</span>
             </span>
         </span>
     </div>
 </section>
-<section class="about-me">
+<section class="about-me" id="about">
     <div class="image-container">
         <img src="img/about-me-image.jpg" alt="Bild">
     </div>
-    <div class="about-text">
-        <p class="title" data-i18n="about.title">Who I am</p>
-        <div class="about-text-container">
-            <h2 id="about" data-i18n="about.container.title"></h2>
+    <div class="description-text">
+        <p class="title" data-i18n="about.title"></p>
+        <div class="description-text-container">
+            <h2 data-i18n="about.container.title"></h2>
             <p data-i18n="about.container.text"></p>
             <div class="my-profile">
                 <div class="location">
@@ -71,13 +85,87 @@
                     <p data-i18n="about.container.location"></p>
                 </div>
                 <div class="open-minded">
-                    <img src="img/open-minded.svg" alt="An image showing a side profile with a gyroscope inside the head">
+                    <img src="img/open-minded.svg"
+                         alt="An image showing a side profile with a gyroscope inside the head">
                     <p data-i18n="about.container.open-minded"></p>
                 </div>
                 <div class="skills">
                     <img src="img/problem-solved.svg" alt="An image showing a type of medal">
                     <p data-i18n="about.container.problem-solving"></p>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="skills" id="skills">
+    <div class="description-text">
+        <p class="title" data-i18n="skills.title"></p>
+        <div class="description-text-container">
+            <h2 data-i18n="skills.container.title"></h2>
+            <p data-i18n="skills.container.text"></p>
+
+            <h3>
+                <span data-i18n="skills.container.cta.title"></span>
+                <span class="text-colored" data-i18n="skills.container.cta.title-colored"></span>
+            </h3>
+            <p data-i18n="skills.container.cta.text"></p>
+
+            <div class="marquee-container">
+                <a href="#contact" class="marquee-button">
+                    <span class="marquee-track">
+                        <span class="marquee-static" data-i18n="skills.container.cta.button">Let's Talk</span>
+                        <span class="marquee-content" data-i18n="skills.container.cta.button">Let's Talk</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="skill-icons">
+        <div class="skill-icon-container">
+            <img src="img/skills/html.svg" alt="HTML" class="skill-icon-img">
+            <p class="skill-icon-text">HTML</p>
+        </div>
+        <div class="skill-icon-container">
+            <img src="img/skills/css.svg" alt="CSS" class="skill-icon-img">
+            <p class="skill-icon-text">CSS</p>
+        </div>
+        <div class="skill-icon-container">
+            <img src="img/skills/js.svg" alt="JavaScript" class="skill-icon-img">
+            <p class="skill-icon-text">JavaScript</p>
+        </div>
+        <div class="skill-icon-container">
+            <img src="img/skills/md.svg" alt="Material Design" class="skill-icon-img">
+            <p class="skill-icon-text">Material Design</p>
+        </div>
+        <div class="skill-icon-container">
+            <img src="img/skills/ts.svg" alt="TypeScript" class="skill-icon-img">
+            <p class="skill-icon-text">TypeScript</p>
+        </div>
+        <div class="skill-icon-container">
+            <img src="img/skills/angular.svg" alt="Angular" class="skill-icon-img">
+            <p class="skill-icon-text">Angular</p>
+        </div>
+        <div class="skill-icon-container">
+            <img src="img/skills/supabase.svg" alt="Supabase" class="skill-icon-img">
+            <p class="skill-icon-text">Supabase</p>
+        </div>
+        <div class="skill-icon-container">
+            <img src="img/skills/git.svg" alt="Git" class="skill-icon-img">
+            <p class="skill-icon-text">Git</p>
+        </div>
+        <div class="skill-icon-container">
+            <img src="img/skills/api.svg" alt="REST API" class="skill-icon-img">
+            <p class="skill-icon-text">REST-API</p>
+        </div>
+        <div class="skill-icon-container">
+            <img src="img/skills/scrum.svg" alt="Scrum" class="skill-icon-img">
+            <p class="skill-icon-text">Scrum</p>
+        </div>
+        <div class="skill-icon-container">
+            <img src="img/skills/mindset.svg" alt="Growth Mindset" class="skill-icon-img">
+            <p class="skill-icon-text">Growth Mindset</p>
+            <div class="skill-hover-container">
+                
             </div>
         </div>
     </div>

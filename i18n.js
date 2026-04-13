@@ -19,7 +19,14 @@ const TRANSLATIONS = {
         'about.container.text': "Hallo, ich bin Lukas! Ich interessiere mich für IT und habe Spaß daran, zu lernen, wie man Software entwickelt und verbessert. Das Programmieren begeistert mich, weil ich damit Probleme lösen und Ideen in echte Anwendungen umsetzen kann. Meine Inspiration beziehe ich aus neuen Technologien und aus dem, was andere erschaffen. Das motiviert mich, meine Fähigkeiten ständig weiterzuentwickeln.",
         'about.container.location': 'Ich bin derzeit in Göttingen ansässig, bin jedoch sehr flexibel, was Arbeitsmodelle betrifft. Remote-Arbeit ist für mich problemlos möglich und auch sehr gut vorstellbar. Eine mögliche Relocation schließe ich grundsätzlich nicht aus, sofern die Rahmenbedingungen und die Position insgesamt gut passen. Ich bin offen für weitere Gespräche dazu.',
         'about.container.open-minded': 'Ich bin offen für neue Technologien und lerne gerne kontinuierlich dazu. Veränderungen sehe ich als Chance, mich weiterzuentwickeln und meine Fähigkeiten laufend zu verbessern.',
-        'about.container.problem-solving': "Mein Problemlösungsansatz kombiniert analytisches Denken und Kreativität. Ich zerlege Herausforderungen in überschaubare Teile, überlege verschiedene Lösungen und bleibe hartnäckig, wenn ich auf Hindernisse stoße. Ich lerne aus jeder Erfahrung, um meine Lösungsansätze zu verbessern, und schätze die Zusammenarbeit, um neue Perspektiven zu gewinnen und effektive Ergebnisse zu erzielen."
+        'about.container.problem-solving': "Mein Problemlösungsansatz kombiniert analytisches Denken und Kreativität. Ich zerlege Herausforderungen in überschaubare Teile, überlege verschiedene Lösungen und bleibe hartnäckig, wenn ich auf Hindernisse stoße. Ich lerne aus jeder Erfahrung, um meine Lösungsansätze zu verbessern, und schätze die Zusammenarbeit, um neue Perspektiven zu gewinnen und effektive Ergebnisse zu erzielen.",
+        'skills.title': 'Technologien',
+        'skills.container.title': "Skill Set",
+        'skills.container.text': "Ich habe Erfahrung mit Frontend-Technologien wie HTML, CSS, JavaScript sowie Frameworks wie Angular. Ich arbeite gern an sauberem, nutzerfreundlichem Code und lerne kontinuierlich neue Tools und Technologien, um mit der schnellen Entwicklung im Web Schritt zu halten.",
+        'skills.container.cta.title': "Sie benötigen ",
+        'skills.container.cta.title-colored': "etwas anderes?",
+        'skills.container.cta.text': "Kontaktieren Sie mich gerne, mit Ihrem konkreten Wunsch. Ich freue mich darauf, mein bisheriges Wissen zu erweitern.",
+        "skills.container.cta.button": "Lassen Sie uns sprechen",
     },
     en: {
         'meta.title': 'Lukas Rensberg · Portfolio',
@@ -41,7 +48,14 @@ const TRANSLATIONS = {
         'about.container.text': "Hey there, I’m Lukas! I’m interested in IT and enjoy learning how to build and improve software. I’m passionate about coding because it lets me solve problems and turn ideas into real applications. My inspiration comes from new technologies and seeing what others create, which motivates me to keep improving my skills.",
         'about.container.location': 'I am currently based in Göttingen, but I am very flexible when it comes to work arrangements. Remote work is not a problem for me and is definitely something I can envision. I am generally open to the possibility of relocating, provided the overall conditions and the position are a good fit. I am open to further discussion on this matter.',
         'about.container.open-minded': 'I am open to new technologies and enjoy learning new things on an ongoing basis. I see change as an opportunity to grow and continuously improve my skills.',
-        'about.container.problem-solving': 'My problem-solving approach combines analytical thinking and creativity. I break challenges into manageable parts, explore different solutions, and stay persistent when facing obstacles. I learn from each experience to improve my approach and value collaboration to gain new perspectives and achieve effective results.'
+        'about.container.problem-solving': 'My problem-solving approach combines analytical thinking and creativity. I break challenges into manageable parts, explore different solutions, and stay persistent when facing obstacles. I learn from each experience to improve my approach and value collaboration to gain new perspectives and achieve effective results.',
+        'skills.title': 'Technologies',
+        'skills.container.title': "Skill Set",
+        'skills.container.text': "I have experience with front-end technologies such as HTML, CSS, JavaScript, and frameworks like Angular. I focus on writing clean, user-friendly code and continuously learn new tools and technologies to keep up with the fast pace of web development.",
+        'skills.container.cta.title': "You need ",
+        'skills.container.cta.title-colored': "another skill?",
+        'skills.container.cta.text': "Feel free to contact me. I look forward to expanding on my previous knowledge.",
+        "skills.container.cta.button": "Let's talk",
     }
 };
 

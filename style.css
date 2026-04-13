@@ -59,7 +59,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    padding: 25px 50px;
+    padding: 25px 80px;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent);;
 }
 
@@ -107,7 +107,7 @@ section.atf {
     background: transparent;
     border: 0;
     text-decoration: none;
-    padding: 6px 1rem;
+    padding: 6px 10px;
     font-size: 1rem;
     line-height: 1;
     cursor: pointer;
@@ -379,11 +379,11 @@ section.about-me {
     width: 600px;
     height: 100%;
     background: repeating-linear-gradient(
-        45deg,
-        var(--primary-color),
-        var(--primary-color) 2px,
-        transparent 2px,
-        transparent 32px
+            45deg,
+            var(--primary-color),
+            var(--primary-color) 2px,
+            transparent 2px,
+            transparent 32px
     );
     border-radius: 40px;
     z-index: 0;
@@ -400,12 +400,12 @@ section.about-me {
     filter: grayscale(1);
 }
 
-.about-text {
+.description-text {
     width: 50%;
-    margin-top: 2%;
+    align-self: flex-end;
 }
 
-.about-text-container {
+.description-text-container {
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -416,13 +416,19 @@ section.about-me {
     background: rgba(61, 207, 182, 12.5%);
 }
 
-.about-text-container h2 {
+.description-text-container h2 {
     margin: 0 20px;
     font-size: 54px;
+    font-family: fira-code, 'sans-serif';
+    font-weight: bold;
     color: var(--primary-color);
 }
 
-.about-text-container p {
+.text-colored {
+    color: var(--primary-color);
+}
+
+.description-text-container p {
     margin: 0 20px;
     font-size: 17px;
     text-align: justify;
@@ -450,4 +456,93 @@ section.about-me {
 
 .my-profile div p:hover {
     color: var(--text-color);
+}
+
+section.skills {
+    padding: 70px 100px;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    gap: 150px;
+    font-family: 'karla', 'sans-serif';
+    overflow: hidden;
+    min-height: var(--section-min-height);
+    width: 100%;
+    background: radial-gradient(circle at center left, rgba(8 70 59 / 0.7), var(--background-color) 25%);
+
+
+
+
+
+
+
+
+    .description-text {
+        align-self: flex-start;
+        max-width: 600px;
+    }
+
+    .description-text-container h2 {
+        font-size: 64px;
+    }
+
+    .description-text-container h3 {
+        margin: 20px 20px 0;
+        font-family: fira-code, 'sans-serif';
+        font-weight: bold;
+        font-size: 30px;
+    }
+
+    .description-text-container p {
+        font-size: 21px;
+    }
+
+    .title {
+        font-size: 30px;
+        font-weight: bold;
+        color: var(--primary-color);
+    }
+
+    .marquee-container {
+        justify-content: flex-start;
+    }
+
+    .marquee-button {
+        margin: 20px;
+    }
+
+    .marquee-button:hover {
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+
+    }
+
+    .skill-icons {
+        display: grid;
+        grid-template-columns: 100px 100px 100px 100px;
+        grid-template-rows: 100px 100px 100px;
+        gap: 100px;
+        margin-top: 100px;
+        align-items: start;
+    }
+
+    .skill-icon-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .skill-icon-container:hover {
+        .skill-icon-img {
+            transform: scale(1.1);
+        }
+    }
+
+    .skill-icon-text {
+        margin:0;
+        font-family: fira-code, 'sans-serif';
+        text-align: center;
+    }
 }

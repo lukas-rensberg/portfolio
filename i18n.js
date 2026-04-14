@@ -27,6 +27,7 @@ const TRANSLATIONS = {
         'skills.container.cta.title-colored': "etwas anderes?",
         'skills.container.cta.text': "Kontaktieren Sie mich gerne, mit Ihrem konkreten Wunsch. Ich freue mich darauf, mein bisheriges Wissen zu erweitern.",
         "skills.container.cta.button": "Lassen Sie uns sprechen",
+        'skills.bubble.text': 'Ich habe ein besonderes Interesse am Lernen von',
     },
     en: {
         'meta.title': 'Lukas Rensberg · Portfolio',
@@ -56,6 +57,7 @@ const TRANSLATIONS = {
         'skills.container.cta.title-colored': "another skill?",
         'skills.container.cta.text': "Feel free to contact me. I look forward to expanding on my previous knowledge.",
         "skills.container.cta.button": "Let's talk",
+        'skills.bubble.text': 'I have a special interest in learning',
     }
 };
 

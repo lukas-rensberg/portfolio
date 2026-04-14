@@ -28,6 +28,13 @@ const TRANSLATIONS = {
         'skills.container.cta.text': "Kontaktieren Sie mich gerne, mit Ihrem konkreten Wunsch. Ich freue mich darauf, mein bisheriges Wissen zu erweitern.",
         "skills.container.cta.button": "Lassen Sie uns sprechen",
         'skills.bubble.text': 'Ich habe ein besonderes Interesse am Lernen von',
+        'projects.title': 'Portfolio',
+        'projects.container.title': 'Featured Projects',
+        'projects.container.text': 'Entdecke hier eine Auswahl meiner Arbeiten – Interagiere mit den Projekten, um meine Fähigkeiten in Aktion zu sehen.',
+        'projects.dialog.question': 'Worum geht es in diesem Projekt?',
+        'projects.join.description': 'Ein vom Kanban-System inspirierter Aufgabenmanager. Aufgabe erstellen, per Drag & Drop organisieren und Benutzer sowie Kategorien zuweisen.',
+        'projects.epl.description': 'Jump-and-Run Browserspiel entwickelt mit Vanilla JavaScript und objektorientierter Programmierung.',
+        'projects.dabubble.description': 'Echtzeit-Messaging-App im Slack-Stil mit Kanälen, Direktnachrichten und Firebase-Backend.',
     },
     en: {
         'meta.title': 'Lukas Rensberg · Portfolio',
@@ -58,6 +65,13 @@ const TRANSLATIONS = {
         'skills.container.cta.text': "Feel free to contact me. I look forward to expanding on my previous knowledge.",
         "skills.container.cta.button": "Let's talk",
         'skills.bubble.text': 'I have a special interest in learning',
+        'projects.title': 'Portfolio',
+        'projects.container.title': 'Featured Projects',
+        'projects.container.text': 'Explore a selection of my work here — interact with projects to see my skills in action.',
+        'projects.dialog.question': 'What is this project about?',
+        'projects.join.description': 'Kanban-based project management tool with real-time collaboration, contact management, and colour-coded task boards.',
+        'projects.epl.description': 'Jump-and-run browser game built with vanilla JavaScript using object-oriented programming principles.',
+        'projects.dabubble.description': 'Slack-inspired real-time messaging app with channels, direct messages, and a Firebase backend.',
     }
 };
 

@@ -357,8 +357,9 @@ section.about-me {
     width: 100%;
 }
 
-.about-me .title {
+.title {
     font-size: 24px;
+    font-weight: bold;
     color: var(--primary-color);
 }
 
@@ -470,13 +471,6 @@ section.skills {
     width: 100%;
     background: radial-gradient(circle at center left, rgba(8 70 59 / 0.7), var(--background-color) 25%);
 
-
-
-
-
-
-
-
     .description-text {
         align-self: flex-start;
         max-width: 600px;
@@ -495,12 +489,6 @@ section.skills {
 
     .description-text-container p {
         font-size: 21px;
-    }
-
-    .title {
-        font-size: 30px;
-        font-weight: bold;
-        color: var(--primary-color);
     }
 
     .marquee-container {
@@ -546,7 +534,7 @@ section.skills {
     }
 
     .skill-icon-container--mindset:hover .skill-icon-text {
-        color: #3DCFB6;
+        color: var(--primary-color);
     }
 
     .skill-icon-text {
@@ -573,7 +561,7 @@ section.skills {
 
     .skill-bubble {
         background: white;
-        color: #3DCFB6;
+        color: var(--primary-color);
         border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: 10px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
@@ -621,5 +609,340 @@ section.skills {
         font-family: karla, 'sans-serif';
         font-size: 0.8rem;
         text-align: center;
+    }
+}
+
+section.featured-projects {
+    padding: 70px 100px;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    gap: 60px;
+    font-family: 'karla', 'sans-serif';
+    overflow: hidden;
+    min-height: var(--section-min-height);
+    width: 100%;
+
+    .description-text {
+        align-self: flex-start;
+        width: unset;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 62px;
+        font-family: fira-code, 'sans-serif';
+        font-weight: bold;
+        color: var(--primary-color);
+    }
+
+    p {
+        font-size: 18px;
+        max-width: 460px;
+        text-align: justify;
+    }
+
+    .title {
+        font-size: 24px;
+        margin: 1rem 0 0.5rem;
+        font-weight: bold;
+        color: var(--primary-color);
+    }
+
+    .projects-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        position: relative;
+    }
+
+    .projects-list {
+        flex: 0 0 60%;
+        display: flex;
+        flex-direction: column;
+        border-top: 2px solid var(--primary-color);
+    }
+
+    .project-entry {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 22px 28px;
+        border-bottom: 2px solid var(--primary-color);
+        cursor: pointer;
+        transition: background 0.2s ease;
+    }
+
+    .project-entry:hover {
+        background: rgba(61, 207, 182, 0.08);
+    }
+
+    .project-entry:hover .project-name {
+        color: var(--primary-color);
+    }
+
+    .project-name {
+        font-family: 'fira-code', monospace;
+        font-size: 22px;
+        font-weight: bold;
+        color: #fff;
+        margin: 0;
+        transition: color 0.2s ease;
+        text-decoration: none;
+    }
+
+    .project-name::after {
+        content: ' ↗';
+        display: inline-block;
+        opacity: 0;
+        color: white;
+        font-weight: 100;
+        transform: translateX(-6px);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .project-entry:hover .project-name::after {
+        opacity: 1;
+        transform: translateX(6px);
+    }
+
+    .project-tech {
+        font-family: 'karla', sans-serif;
+        font-size: 14px;
+    }
+
+    .projects-preview-col {
+        flex: 0 0 40%;
+        align-self: stretch;
+        position: relative;
+        pointer-events: none;
+    }
+
+    .projects-preview-wrapper {
+        position: absolute;
+        left: 40px;
+        width: calc(60% - 40px);
+        opacity: 0;
+        transition: opacity 0.25s ease;
+        pointer-events: none;
+    }
+
+    .projects-preview-wrapper.is-visible {
+        opacity: 1;
+    }
+
+    .projects-preview-wrapper::before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 100%;
+        height: 100%;
+        background: repeating-linear-gradient(
+                120deg,
+                var(--primary-color),
+                var(--primary-color) 2px,
+                transparent 2px,
+                transparent 8px
+        );
+        border-radius: 16px;
+        z-index: 0;
+    }
+
+    .projects-preview-img {
+        position: relative;
+        z-index: 1;
+        display: block;
+        width: 100%;
+        border-radius: 16px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+        pointer-events: none;
+    }
+
+    .divider {
+        color: var(--primary-color);
+    }
+
+
+    @keyframes dialog-in {
+        from {
+            opacity: 0;
+            transform: scale(0.96) translateY(12px);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
+
+    .project-preview-dialog {
+        border: none;
+        border-radius: 20px;
+        padding: 0;
+        max-width: 900px;
+        width: 90vw;
+        background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+        color: var(--text-color);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+        overflow: hidden;
+    }
+
+    .project-preview-dialog::backdrop {
+        background: rgba(0, 0, 0, 0.65);
+        backdrop-filter: blur(6px);
+    }
+
+    .project-preview-dialog[open] {
+        display: flex;
+        animation: dialog-in 0.2s ease;
+    }
+
+    .dialog-left {
+        flex: 0 0 42%;
+        padding: 40px 36px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .dialog-number {
+        font-family: 'karla', sans-serif;
+        font-size: 52px;
+        font-weight: bold;
+        color: var(--primary-color);
+        line-height: 1;
+    }
+
+    .dialog-title {
+        font-family: 'fira-code', monospace;
+        font-size: 34px;
+        font-weight: bold;
+        color: #fff;
+        margin: 0;
+        line-height: 1.1;
+    }
+
+    .dialog-question {
+        font-family: 'fira-code', sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        color: var(--primary-color);
+        margin: 4px 0 0;
+    }
+
+    .dialog-description {
+        font-family: 'karla', sans-serif;
+        font-size: 15px;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.7);
+        margin: 0;
+        flex: 1;
+    }
+
+    .dialog-tech-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .dialog-tech-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(61, 207, 182, 0.08);
+        border: 1px solid rgba(61, 207, 182, 0.25);
+        border-radius: 6px;
+        padding: 4px 10px;
+        font-family: 'fira-code', monospace;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+    .dialog-tech-badge img {
+        width: 14px;
+        height: 14px;
+    }
+
+    .dialog-links {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 4px;
+    }
+
+    .dialog-link {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-family: 'fira-code', monospace;
+        font-size: 14px;
+        border: 1px solid var(--primary-color);
+        padding: 8px 20px;
+        border-radius: 30px;
+        transition: background 0.2s;
+    }
+
+    .dialog-link:hover {
+        background: rgba(61, 207, 182, 0.1);
+    }
+
+    .dialog-right {
+        flex: 0 0 58%;
+        position: relative;
+        min-height: 380px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dialog-close-button {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.45);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: var(--text-color);
+        border-radius: 50%;
+        width: 34px;
+        height: 34px;
+        font-size: 20px;
+        line-height: 1;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s, border-color 0.2s;
+    }
+
+    .dialog-close-button:hover {
+        background: rgba(61, 207, 182, 0.15);
+        border-color: var(--primary-color);
+    }
+
+    .dialog-preview-img {
+        width: 88%;
+        border-radius: 12px;
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+        display: block;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    @media (max-width: 640px) {
+        .project-preview-dialog[open] {
+            flex-direction: column;
+            width: 95vw;
+        }
+
+        .dialog-left {
+            flex: none;
+            padding: 28px 24px;
+        }
+
+        .dialog-right {
+            min-height: 220px;
+            flex: none;
+        }
     }
 }

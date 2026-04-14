@@ -183,7 +183,67 @@
         </div>
     </div>
 </section>
+<section class="featured-projects" id="projects">
+    <div class="description-text">
+        <p class="title" data-i18n="projects.title"></p>
+        <h2 data-i18n="projects.container.title"></h2>
+        <p data-i18n="projects.container.text"></p>
+    </div>
 
+    <div class="projects-wrapper">
+        <div class="projects-list">
+            <div class="project-entry"
+                 data-number="01"
+                 data-preview="img/join.jpg"
+                 data-description-key="projects.join.description"
+                 data-github="#"
+                 data-live="#">
+                <h3 class="project-name">Join</h3>
+                <span class="project-tech">Angular <span class="divider">|</span> TypeScript <span class="divider">|</span> HTML <span class="divider">|</span> CSS <span class="divider">|</span> Firebase</span>
+            </div>
+
+            <div class="project-entry"
+                 data-number="02"
+                 data-preview="img/epl.jpg"
+                 data-description-key="projects.epl.description"
+                 data-github="#"
+                 data-live="#">
+                <h3 class="project-name">El Pollo Loco</h3>
+                <span class="project-tech">HTML <span class="divider">|</span> CSS <span class="divider">|</span> JavaScript</span>
+            </div>
+
+            <div class="project-entry"
+                 data-number="03"
+                 data-preview="img/dabubble.jpg"
+                 data-description-key="projects.dabubble.description"
+                 data-github="#"
+                 data-live="#">
+                <h3 class="project-name">DA Bubble</h3>
+                <span class="project-tech">Angular <span class="divider">|</span> Firebase <span class="divider">|</span> TypeScript</span>
+            </div>
+        </div>
+
+        <div class="projects-preview-col">
+            <div class="projects-preview-wrapper">
+                <img class="projects-preview-img" src="" alt="" aria-hidden="true">
+            </div>
+        </div>
+    </div>
+    <dialog class="project-preview-dialog" aria-modal="true" aria-hidden="true">
+        <div class="dialog-left">
+            <span class="dialog-number"></span>
+            <h2 class="dialog-title"></h2>
+            <p class="dialog-question" data-i18n="projects.dialog.question">What is this project about?</p>
+            <p class="dialog-description"></p>
+            <div class="dialog-tech-list"></div>
+            <div class="dialog-links"></div>
+        </div>
+        <div class="dialog-right">
+            <button class="dialog-close-button" aria-label="Close preview">&times;</button>
+            <img class="dialog-preview-img" src="" alt="">
+        </div>
+    </dialog>
+</section>
 
 <script type="module" src="./script.js"></script>
 </body>

@@ -28,14 +28,14 @@ body {
 
 @font-face {
     font-family: 'fira-code';
-    src: url('./fonts/FiraCode.ttf') format('truetype');
+    src: url('assets/fonts/FiraCode.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'karla';
-    src: url('./fonts/Karla.ttf') format('truetype');
+    src: url('assets/fonts/Karla.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
@@ -776,10 +776,11 @@ section.featured-projects {
     }
 
     .project-preview-dialog {
-        border: none;
+        border: 1px solid var(--primary-color);
         border-radius: 20px;
         padding: 0;
-        max-width: 900px;
+        max-width: 1440px;
+        height: 90vh;
         width: 90vw;
         background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
         color: var(--text-color);
@@ -807,7 +808,7 @@ section.featured-projects {
 
     .dialog-number {
         font-family: 'karla', sans-serif;
-        font-size: 52px;
+        font-size: 110px;
         font-weight: bold;
         color: var(--primary-color);
         line-height: 1;
@@ -815,7 +816,7 @@ section.featured-projects {
 
     .dialog-title {
         font-family: 'fira-code', monospace;
-        font-size: 34px;
+        font-size: 52px;
         font-weight: bold;
         color: #fff;
         margin: 0;
@@ -824,7 +825,7 @@ section.featured-projects {
 
     .dialog-question {
         font-family: 'fira-code', sans-serif;
-        font-size: 14px;
+        font-size: 21px;
         font-weight: bold;
         color: var(--primary-color);
         margin: 4px 0 0;
@@ -832,35 +833,32 @@ section.featured-projects {
 
     .dialog-description {
         font-family: 'karla', sans-serif;
-        font-size: 15px;
+        font-size: 1rem;
         line-height: 1.65;
         color: rgba(255, 255, 255, 0.7);
         margin: 0;
-        flex: 1;
     }
 
     .dialog-tech-list {
         display: flex;
         flex-wrap: wrap;
-        gap: 8px;
+        gap: 10px;
+        margin: 20px 0;
     }
 
     .dialog-tech-badge {
         display: inline-flex;
         align-items: center;
-        gap: 6px;
-        background: rgba(61, 207, 182, 0.08);
-        border: 1px solid rgba(61, 207, 182, 0.25);
-        border-radius: 6px;
-        padding: 4px 10px;
-        font-family: 'fira-code', monospace;
-        font-size: 12px;
-        color: rgba(255, 255, 255, 0.75);
+        gap: 8px;
+        font-family: 'karla', sans-serif;
+        font-weight: unset;
+        font-size: 15px;
+        color: white;
     }
 
     .dialog-tech-badge img {
-        width: 14px;
-        height: 14px;
+        width: 20px;
+        height: 20px;
     }
 
     .dialog-links {
@@ -871,18 +869,63 @@ section.featured-projects {
     }
 
     .dialog-link {
-        color: var(--primary-color);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: white;
         text-decoration: none;
-        font-family: 'fira-code', monospace;
-        font-size: 14px;
-        border: 1px solid var(--primary-color);
+        font-family: 'karla', sans-serif;
+        font-size: 16px;
+        border: 1px solid white;
         padding: 8px 20px;
         border-radius: 30px;
-        transition: background 0.2s;
+        transition: background 0.2s, color 0.2s, border-color 0.2s;
     }
 
     .dialog-link:hover {
-        background: rgba(61, 207, 182, 0.1);
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+    }
+
+    .dialog-link-arrow {
+        flex-shrink: 0;
+        transition: transform 0.25s ease;
+    }
+
+    .dialog-link:hover .dialog-link-arrow {
+        transform: translateX(4px) scale(1.15);
+    }
+
+    .dialog-next-btn {
+        position: absolute;
+        bottom: 32px;
+        right: 36px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--primary-color);
+        font-family: 'karla', sans-serif;
+        font-size: 15px;
+        padding: 0;
+        transition: color 0.2s;
+        z-index: 2;
+    }
+
+    .dialog-next-arrow {
+        color: var(--primary-color);
+        flex-shrink: 0;
+        transition: transform 0.25s ease;
+    }
+
+    .dialog-next-btn:hover {
+        color: #fff;
+    }
+
+    .dialog-next-btn:hover .dialog-next-arrow {
+        transform: translateX(5px) scale(1.15);
     }
 
     .dialog-right {
@@ -893,40 +936,42 @@ section.featured-projects {
         display: flex;
         align-items: center;
         justify-content: center;
+        padding: 40px 36px 80px;
     }
 
     .dialog-close-button {
         position: absolute;
-        top: 14px;
-        right: 14px;
+        top: 20px;
+        right: 36px;
         z-index: 10;
-        background: rgba(0, 0, 0, 0.45);
-        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: none;
+        border: none;
         color: var(--text-color);
-        border-radius: 50%;
-        width: 34px;
-        height: 34px;
-        font-size: 20px;
+        font-size: 28px;
+        font-weight: 100;
         line-height: 1;
         cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: background 0.2s, border-color 0.2s;
+        padding: 0;
+        transition: color 0.2s, transform 0.2s;
     }
 
     .dialog-close-button:hover {
-        background: rgba(61, 207, 182, 0.15);
-        border-color: var(--primary-color);
+        color: var(--primary-color);
+        transform: scale(1.75);
     }
 
     .dialog-preview-img {
-        width: 88%;
-        border-radius: 12px;
-        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
         display: block;
-        object-fit: cover;
-        object-position: top;
+        object-fit: contain;
+        border-radius: 10px;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
     }
 
     @media (max-width: 640px) {
@@ -945,4 +990,145 @@ section.featured-projects {
             flex: none;
         }
     }
+}
+
+section.testimonials {
+    padding: 80px 0 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 52px;
+    min-height: var(--section-min-height);
+    width: 100%;
+    overflow: hidden;
+    background: var(--background-color);
+}
+
+.testimonials-title {
+    font-family: 'fira-code', monospace;
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-align: center;
+    margin: 0;
+    padding: 0 40px;
+}
+
+.testimonial-swiper {
+    width: 100%;
+    overflow: visible;
+}
+
+.testimonial-card {
+    width: 55%;
+    overflow: visible;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 36px 40px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    opacity: 0.35;
+    transition: opacity 0.45s ease, background 0.45s ease, border-color 0.45s ease;
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+.testimonial-card.swiper-slide-active {
+    background: linear-gradient(135deg, #0e3d33 0%, #082d25 100%);
+    border-color: var(--primary-color);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.testimonial-quote-mark {
+    position: relative;
+    top: -48px;
+    display: block;
+    align-self: flex-start;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 120px;
+    line-height: 0.8;
+    color: #fff;
+    margin-bottom: -48px;
+    margin-left: -6px;
+    user-select: none;
+    pointer-events: none;
+}
+
+.testimonial-text {
+    font-family: 'karla', sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    flex: 1;
+}
+
+.testimonial-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.testimonial-author {
+    font-family: 'fira-code', monospace;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.testimonial-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.testimonial-prev,
+.testimonial-next {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 22px;
+    cursor: pointer;
+    padding: 6px;
+    line-height: 1;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.testimonial-prev:hover,
+.testimonial-next:hover {
+    color: var(--primary-color);
+}
+
+.testimonial-next:hover {
+    transform: translateX(3px);
+}
+
+.testimonial-prev:hover {
+    transform: translateX(-3px);
+}
+
+.testimonial-dots {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.testimonial-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.testimonial-dot.active {
+    background: var(--primary-color);
+    transform: scale(1.25);
 }

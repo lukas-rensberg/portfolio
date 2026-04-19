@@ -998,7 +998,6 @@ section.testimonials {
     flex-direction: column;
     align-items: center;
     gap: 52px;
-    min-height: var(--section-min-height);
     width: 100%;
     overflow: hidden;
     background: var(--background-color);
@@ -1044,15 +1043,18 @@ section.testimonials {
 
 .testimonial-quote-mark {
     position: relative;
-    top: -48px;
+    top: 48px;
     display: block;
     align-self: flex-start;
     font-family: Georgia, 'Times New Roman', serif;
     font-size: 120px;
     line-height: 0.8;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
     color: #fff;
-    margin-bottom: -48px;
-    margin-left: -6px;
+    margin-top: -60px;
+    margin-bottom: -30px;
     user-select: none;
     pointer-events: none;
 }
@@ -1068,10 +1070,14 @@ section.testimonials {
 
 .testimonial-footer {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    padding-top: 18px;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    gap: 10px;
+}
+
+.author-separator {
+    flex: 1;
+    height: 1px;
+    border: 1px solid gray;
 }
 
 .testimonial-author {
@@ -1111,10 +1117,46 @@ section.testimonials {
     transform: translateX(-3px);
 }
 
-.testimonial-dots {
+.swiper-pagination {
     display: flex;
-    gap: 10px;
     align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Standard Bullet */
+.swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: #2f3a3a;
+    opacity: 1;
+    border-radius: 50%;
+
+    transition:
+            width 0.3s ease,
+            background 0.3s ease,
+            transform 0.3s ease;
+}
+
+/* Aktive Bullet */
+.swiper-pagination-bullet-active {
+    border-radius: 10px;
+    background: #35e0c4;
+
+    transform: scale(1.1);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.prev, .next {
+    cursor: pointer;
+    font-size: 18px;
 }
 
 .testimonial-dot {

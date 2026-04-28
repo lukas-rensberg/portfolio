@@ -1,0 +1,137 @@
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    width: 100%;
+    padding: 25px 80px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    font-family: 'fira-code', 'sans-serif';
+    color: var(--text-color);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent);
+}
+
+
+.topbar__nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.topbar__links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.topbar__link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    position: relative;
+}
+
+.topbar__link::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.topbar__link:hover::after {
+    opacity: 1;
+}
+
+.topbar__link.active {
+    color: var(--primary-color);
+}
+
+.topbar__lang {
+    display: inline-flex;
+    border: 1px solid var(--primary-color);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.topbar__lang-btn {
+    color: var(--text-color);
+    background: transparent;
+    border: 0;
+    text-decoration: none;
+    padding: 6px 10px;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    font-family: 'fira-code', 'sans-serif';
+}
+
+.topbar__lang-btn:hover {
+    background: rgba(31, 215, 178, 0.12);
+}
+
+.topbar__lang-btn:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: -2px;
+}
+
+.topbar__lang-btn--active {
+    background: var(--primary-color);
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.topbar__lang-btn--active:hover {
+    background: var(--primary-color);
+}
+
+.logo {
+    position: relative;
+    display: inline-block;
+    height: 48px;
+    overflow: hidden;
+}
+
+.logo__img {
+    display: block;
+    height: 48px;
+    width: auto;
+}
+
+.logo__img--base {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transition: clip-path 450ms ease, opacity 220ms ease;
+}
+
+.logo__img--overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 450ms ease, opacity 220ms ease;
+}
+
+.logo:hover .logo__img--base,
+.logo:focus-visible .logo__img--base {
+    opacity: 0;
+    clip-path: inset(0 0 0 100%);
+}
+
+.logo:hover .logo__img--overlay,
+.logo:focus-visible .logo__img--overlay {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+}

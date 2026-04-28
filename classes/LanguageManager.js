@@ -23,9 +23,9 @@ export default class LanguageManager {
 
         this.#applyTranslations(valid);
 
-        document.querySelectorAll('.lang_link[data-lang]').forEach(button => {
+        document.querySelectorAll('.topbar__lang-btn[data-lang]').forEach(button => {
             const isActive = button.dataset.lang === valid;
-            button.classList.toggle('active', isActive);
+            button.classList.toggle('topbar__lang-btn--active', isActive);
             button.setAttribute('aria-pressed', String(isActive));
         });
 
@@ -45,6 +45,13 @@ export default class LanguageManager {
             element.textContent = translation;
         });
 
+        document.querySelectorAll('[data-i18n-html]').forEach(element => {
+            const key = element.dataset.i18nHtml;
+            const translation = this.getTranslation(language, key);
+            if (!translation) return;
+            element.innerHTML = translation;
+        });
+
         document.querySelectorAll('[data-i18n-aria-label]').forEach(element => {
             const key = element.dataset.i18nAriaLabel;
             const translation = this.getTranslation(language, key);
@@ -54,7 +61,7 @@ export default class LanguageManager {
     }
 
     init() {
-        const buttons = document.querySelectorAll('.lang_link[data-lang]');
+        const buttons = document.querySelectorAll('.topbar__lang-btn[data-lang]');
         if (!buttons.length) return;
 
         buttons.forEach(button => {

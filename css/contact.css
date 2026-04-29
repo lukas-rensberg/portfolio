@@ -1,0 +1,185 @@
+.contact {
+    padding: 70px 100px;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    gap: 120px;
+    font-family: 'karla', 'sans-serif';
+    overflow: hidden;
+    width: 100%;
+
+    .section-intro {
+        align-self: flex-start;
+        width: 40%;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 62px;
+        font-family: fira-code, 'sans-serif';
+        font-weight: bold;
+        color: var(--primary-color);
+    }
+
+    h3 {
+        margin: 2rem 0 0;
+        font-size: 25px;
+        font-family: fira-code, 'sans-serif';
+        font-weight: 1000;
+        color: var(--primary-color);
+    }
+
+    p {
+        font-size: 18px;
+        max-width: 460px;
+        text-align: justify;
+    }
+
+    .section-intro__label {
+        font-size: 24px;
+        margin: 1rem 0 0.5rem;
+        font-weight: bold;
+        color: var(--primary-color);
+    }
+
+    .text--accent {
+        font-weight: bold;
+    }
+
+    form {
+        width: 50%;
+    }
+
+    .form-field {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        border: 1px solid var(--primary-color);
+        border-left: unset;
+        border-right: unset;
+        padding: 2rem 2rem 1.1rem;
+    }
+
+    .form-field:first-child {
+        margin: 1rem 0 0;
+    }
+
+    .form-field label {
+        font-size: 25px;
+        font-family: fira-code, 'sans-serif';
+        color: var(--primary-color);
+    }
+
+    .form-field input,
+    .form-field textarea {
+        display: block;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: white;
+        width: 100%;
+        font-family: karla, sans-serif;
+        font-size: 18px;
+        field-sizing: content;
+        resize: vertical;
+        max-height: 100px;
+        margin-top: 16px;
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder {
+        color: #999;
+    }
+
+    .form-field input.field-error::placeholder,
+    .form-field textarea.field-error::placeholder {
+        color: #e53935;
+        opacity: 1;
+    }
+
+    .form-field__error {
+        display: block;
+        min-height: 1.1em;
+        font-size: 14px;
+        font-family: karla, sans-serif;
+        color: #e53935;
+        visibility: hidden;
+        line-height: 1.1;
+    }
+
+    .form-field__error.is-visible {
+        visibility: visible;
+    }
+
+    .form-field--checkbox {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-top: 2.5rem;
+    }
+
+    .form-field--checkbox input[type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+        pointer-events: none;
+    }
+
+    .form-field__checkbox-label {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+        user-select: none;
+        font-size: 16px;
+        font-family: karla, sans-serif;
+
+        span a {
+            color: var(--primary-color);
+            text-decoration: none;
+            position: relative;
+            font-family: 'fira-code', monospace;
+        }
+
+        span a:hover {
+            color: white;
+        }
+
+        span a:hover::after {
+            opacity: 1;
+        }
+
+        span a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: var(--primary-color);
+            opacity: 0;
+            transition: opacity 0.1s ease;
+        }
+    }
+
+    .form-field__checkbox-icon {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        background-image: url('../assets/img/checkbox-unchecked.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    #privacy:checked + .form-field__checkbox-label .form-field__checkbox-icon {
+        background-image: url('../assets/img/checkbox-checked.svg');
+    }
+
+    .cta__btn:not(:disabled):hover {
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+    }
+}

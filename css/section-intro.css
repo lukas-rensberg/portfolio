@@ -1,0 +1,35 @@
+.section-intro {
+    width: 50%;
+    align-self: flex-end;
+}
+
+.section-intro__box {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid var(--primary-color);
+    background: rgba(61, 207, 182, 12.5%);
+}
+
+.section-intro__box h2 {
+    margin: 0 20px;
+    font-size: 54px;
+    font-family: fira-code, 'sans-serif';
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.section-intro__box p {
+    margin: 0 20px;
+    font-size: 17px;
+    text-align: justify;
+}
+
+.section-intro__label {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+}

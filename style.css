@@ -876,12 +876,12 @@ section.testimonials {
     .form-field {
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 0;
         width: 100%;
         border: 1px solid var(--primary-color);
         border-left: unset;
         border-right: unset;
-        padding: 2rem;
+        padding: 2rem 2rem 1.1rem;
     }
 
     .form-field:first-child {
@@ -907,6 +907,7 @@ section.testimonials {
         field-sizing: content;
         resize: vertical;
         max-height: 100px;
+        margin-top: 16px;
     }
 
     .form-field input::placeholder,
@@ -923,7 +924,7 @@ section.testimonials {
     .form-field__error {
         display: block;
         min-height: 1.1em;
-        font-size: 13px;
+        font-size: 14px;
         font-family: karla, sans-serif;
         color: #e53935;
         visibility: hidden;
@@ -940,7 +941,6 @@ section.testimonials {
         align-items: flex-start;
         gap: 8px;
         margin-top: 2.5rem;
-        margin-bottom: 2.5rem;
     }
 
     .form-field--checkbox input[type="checkbox"] {

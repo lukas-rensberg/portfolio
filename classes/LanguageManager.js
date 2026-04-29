@@ -58,6 +58,13 @@ export default class LanguageManager {
             if (!translation) return;
             element.setAttribute('aria-label', translation);
         });
+
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+            const key = element.dataset.i18nPlaceholder;
+            const translation = this.getTranslation(language, key);
+            if (!translation) return;
+            element.setAttribute('placeholder', translation);
+        });
     }
 
     init() {

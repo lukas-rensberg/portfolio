@@ -1,3 +1,44 @@
+:root {
+    --primary-color: #3dcfb6;
+    --background-color: #1C1C1C;
+    --text-color: #fff;
+    --text-color-hoverable: rgba(255, 255, 255, 0.8);
+    --primary-font-family: 'karla', 'sans-serif';
+    --secondary-font-family: 'fira-code', 'sans-serif';
+    --section-min-height: 100vh;
+}
+
+@supports (height: 100dvh) {
+    :root {
+        --section-min-height: 100dvh;
+    }
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background: var(--background-color);
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: 'fira-code';
+    src: url('/assets/fonts/FiraCode.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'karla';
+    src: url('/assets/fonts/Karla.ttf') format('truetype');
+    font-style: normal;
+}
+
 .text--accent {
     color: var(--primary-color);
 }

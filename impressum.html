@@ -6,25 +6,31 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lukas Rensberg · Impressum</title>
-    <link rel="stylesheet" href="./style.css">
+    <link href="./style.css" rel="stylesheet">
+    <link href="./css/header-footer.css" rel="stylesheet">
+    <link href="./css/hero.css" rel="stylesheet">
 </head>
 <body class="alt-page">
 <header class="topbar">
-    <div class="nav_left">
-        <div class="lang_switch" role="group" aria-label="Sprachauswahl" data-i18n-aria-label="ui.languageSwitch">
-            <button type="button" class="lang_link" data-lang="en" aria-pressed="false">EN</button>
-            <button type="button" class="lang_link active" data-lang="de" aria-pressed="true">DE</button>
+    <div class="topbar__nav">
+        <div aria-label="Sprachauswahl" class="topbar__lang" data-i18n-aria-label="ui.languageSwitch" role="group">
+            <button aria-pressed="false" class="topbar__lang-btn" data-lang="en" type="button">EN</button>
+            <button aria-pressed="true" class="topbar__lang-btn topbar__lang-btn--active" data-lang="de" type="button">
+                DE
+            </button>
         </div>
-        <nav class="nav_links" aria-label="Hauptnavigation" data-i18n-aria-label="ui.mainNavigation">
-            <a href="/index.html#about" class="navbar_link" data-i18n="nav.about">About me</a>
-            <a href="/index.html#skills" class="navbar_link" data-i18n="nav.skills">Skills</a>
-            <a href="/index.html#projects" class="navbar_link" data-i18n="nav.projects">Projects</a>
+        <nav aria-label="Hauptnavigation" class="topbar__links" data-i18n-aria-label="ui.mainNavigation">
+            <a class="topbar__link" data-i18n="nav.about" href="index.html#about">About me</a>
+            <a class="topbar__link" data-i18n="nav.skills" href="index.html#skills">Skills</a>
+            <a class="topbar__link" data-i18n="nav.projects" href="index.html#projects">Projects</a>
         </nav>
     </div>
-    <a href="#" class="logo" aria-label="Zur Startseite" data-i18n-aria-label="ui.homeLink">
+    <!-- TODO: Remove live preview url and change to / -->
+    <a aria-label="Zur Startseite" class="logo" data-i18n-aria-label="ui.homeLink" href="/lukas-rensberg.de/">
         <img class="logo__img logo__img--base" src="assets/img/lr-logo-white.png"
              alt="Logo mit einem weißen L und R ineinander sowie dem Text Lukas Rensberg">
-        <img class="logo__img logo__img--overlay" src="assets/img/lr-logo-white-outline.png" alt="" aria-hidden="true">
+        <img alt="Outline des Logos" aria-hidden="true" class="logo__img logo__img--overlay"
+             src="assets/img/lr-logo-white-outline.png">
     </a>
 </header>
 <h1 class="section-intro__label" data-i18n="imprint.title">
@@ -39,8 +45,9 @@
     <span data-i18n="imprint.country">Germany</span>
 </p>
 <p><strong data-i18n="imprint.contact.title">Kontakt:</strong> <br>
-    <span data-i18n="imprint.contact.phone">Telefon:</span> +49 15563 543485<br>
-    <span data-i18n="imprint.contact.mail">E-Mail:</span> <a>contact@lukas-rensberg.de</a><br></p>
+    <span data-i18n="imprint.contact.phone">Telefon:</span> <a href="tel:+4915563543485">+49 15563 543485</a><br>
+    <span data-i18n="imprint.contact.mail">E-Mail:</span> <a href="mailto:contact@lukas-rensberg.de">contact@lukas-rensberg.de</a><br>
+</p>
 <p><strong data-i18n="imprint.msst.title">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:</strong><br>
     Lukas Rensberg <br>
     Bahnhofstraße 10<br>
@@ -59,15 +66,14 @@
 <p data-i18n="imprint.multilingual.hint"></p>
 <p data-i18n="imprint.date"></p>
 
-<footer>
+<footer class="footer">
     <div class="footer__container">
-
         <div class="footer__brand">
             <a href="#" class="logo" data-i18n-aria-label="ui.homeLink">
-                <img class="logo__img logo__img--base"
+                <img class="logo__img logo__img--base" loading="lazy"
                      src="assets/img/lr-logo-white.png"
                      alt="Logo Lukas Rensberg">
-                <img class="logo__img logo__img--overlay"
+                <img class="logo__img logo__img--overlay" loading="lazy"
                      src="assets/img/lr-logo-white-outline.png"
                      alt="" aria-hidden="true">
             </a>
@@ -83,9 +89,8 @@
             <a href="https://github.com/lukas-rensberg" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a href="https://linkedin.com/in/lukas-rensberg" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="mailto:contact@lukas-rensberg.de" data-i18n="footer.email"></a>
-            <a href="/impressum.html" data-i18n="footer.legal"></a>
+            <a data-i18n="footer.legal" href="impressum.html"></a>
         </nav>
-
     </div>
 </footer>
 

@@ -1,5 +1,5 @@
 .section-intro {
-    width: 50%;
+    width: min(50%, 700px);
     align-self: flex-end;
 }
 
@@ -16,7 +16,7 @@
 
 .section-intro__box h2 {
     margin: 0 20px;
-    font-size: 54px;
+    font-size: clamp(32px, 4vw, 54px);
     font-family: fira-code, 'sans-serif';
     font-weight: bold;
     color: var(--primary-color);
@@ -24,12 +24,12 @@
 
 .section-intro__box p {
     margin: 0 20px;
-    font-size: 17px;
+    font-size: clamp(14px, 1.5vw, 17px);
     text-align: justify;
 }
 
 .section-intro__label {
-    font-size: 24px;
+    font-size: clamp(18px, 2vw, 24px);
     font-weight: bold;
     color: var(--primary-color);
 }

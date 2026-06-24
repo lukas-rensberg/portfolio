@@ -1,4 +1,9 @@
 .hero {
+    background: linear-gradient(60deg, var(--background-color) 23%, #08463b 100%);
+    overflow: hidden;
+}
+
+.hero__inner {
     position: relative;
     inset: 0;
     text-align: center;
@@ -8,29 +13,39 @@
     align-items: center;
     gap: 10px;
     font-family: 'fira-code', 'sans-serif';
-    background: linear-gradient(60deg, var(--background-color) 23%, #08463b 100%);
-    overflow: hidden;
     min-height: var(--section-min-height);
     width: 100%;
+    max-width: 1920px;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 5vw, 4rem);
 }
 
 .hero__role {
-    font-size: 40px;
+    font-size: clamp(1rem, 2vw, 80px);
 }
 
 .hero__title {
     font-family: 'karla', 'sans-serif';
-    margin: 0;
-    font-size: 90px;
+    margin: 0 16px;
+    font-size: clamp(1.75rem, 6vw, 90px);
 }
 
 
+/*
+ * Statusline (Lauftext-Band) – feste, designgetreue Maße statt clamp()/vw.
+ * Höhe, Schriftgröße, Trennpunkt und Abstände bilden ein festes Verhältnis.
+ * Mit clamp()/vw würde jeder dieser Werte mit einem anderen vw-Faktor
+ * skalieren, sodass sich Proportionen und die absolute Position (bottom +
+ * rotate) bei jedem Resize verschieben. Feste Werte je Breakpoint halten
+ * das Layout stabil; die Desktop-Werte entsprechen exakt den bisherigen
+ * clamp()-Maxima.
+ */
 .status-band {
     backdrop-filter: blur(4px);
     background: rgba(255, 255, 255, 0.12);
     box-sizing: border-box;
-    width: 100vw;
-    height: 65px;
+    width: 102%;
+    height: 80px;
     position: absolute;
     bottom: 50px;
     transform: rotate(-3deg);
@@ -61,8 +76,41 @@
 .status-band__dot {
     font-size: 50px;
     line-height: 1;
-    margin-left: 55px;
-    margin-right: 55px;
+    margin-inline: 55px;
+}
+
+/* Tablet: Maße proportional reduziert – Verhältnis bleibt erhalten. */
+@media (width <= 768px) {
+    .status-band {
+        height: 88px;
+        bottom: 48px;
+    }
+
+    .status-band__text {
+        font-size: 28px;
+    }
+
+    .status-band__dot {
+        font-size: 36px;
+        margin-inline: 36px;
+    }
+}
+
+/* Mobil: gleiche Proportionen, kompaktere feste Werte. */
+@media (width <= 480px) {
+    .status-band {
+        height: 60px;
+        bottom: 30px;
+    }
+
+    .status-band__text {
+        font-size: 20px;
+    }
+
+    .status-band__dot {
+        font-size: 26px;
+        margin-inline: 24px;
+    }
 }
 
 .scroll-indicator {
@@ -73,25 +121,30 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 35vh;
+    height: 42vh;
     pointer-events: none;
     opacity: 1;
     transition: opacity 0.5s ease;
     z-index: 0;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .scroll-indicator__pill {
-    width: 35px;
-    height: 60px;
+    width: 44px;
+    height: 76px;
     border: 1px solid var(--primary-color);
-    border-radius: 20px;
+    border-radius: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--primary-color);
     animation: scrollBounce 2s ease-in-out infinite;
     flex-shrink: 0;
+}
+
+.scroll-indicator__pill svg {
+    width: 13px;
+    height: 30px;
 }
 
 .scroll-indicator__line {
@@ -113,11 +166,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 55vh;
+    height: 62vh;
     opacity: 1;
     transition: opacity 0.5s ease;
     z-index: 0;
-    gap: 0.5rem;
+    gap: 0.75rem;
 }
 
 .right-lateral__line {
@@ -131,7 +184,8 @@
     writing-mode: vertical-rl;
     transform: rotate(
             180deg);
-    margin-bottom: 20px;
+    margin-bottom: 28px;
+    font-size: 20px;
     color: inherit;
     text-decoration: none;
 }
@@ -143,6 +197,11 @@
 .right-lateral__social {
     position: relative;
     color: var(--primary-color);
+}
+
+.right-lateral__social svg {
+    width: 40px;
+    height: 40px;
 }
 
 .right-lateral__social::after {
@@ -165,4 +224,86 @@
 
 .right-lateral__social:hover {
     color: white;
+}
+
+.right-lateral__mail-icon {
+    display: none;
+}
+
+/* Tablet: feste Zwischengrößen – gestuft, keine stufenlose Skalierung. */
+@media (width <= 768px) {
+    .scroll-indicator {
+        height: 38vh;
+    }
+
+    .scroll-indicator__pill {
+        width: 40px;
+        height: 68px;
+    }
+
+    .scroll-indicator__pill svg {
+        width: 11px;
+        height: 26px;
+    }
+
+    .right-lateral {
+        height: 58vh;
+    }
+
+    .right-lateral__mail {
+        font-size: 17px;
+    }
+
+    .right-lateral__social svg {
+        width: 34px;
+        height: 34px;
+    }
+}
+
+@media (width <= 600px) {
+    .scroll-indicator {
+        left: 1rem;
+        transform: none;
+    }
+
+    .right-lateral {
+        right: 1rem;
+        transform: none;
+        height: clamp(150px, 40vw, 280px);
+    }
+
+    .right-lateral__mail {
+        writing-mode: horizontal-tb;
+        transform: none;
+        margin-bottom: 0;
+    }
+
+    .right-lateral__mail-text {
+        display: none;
+    }
+
+    .right-lateral__mail-icon {
+        display: inline-flex;
+    }
+
+    /* Mobil: kompakte feste Größen nahe dem Original. */
+    .scroll-indicator__pill {
+        width: 34px;
+        height: 58px;
+    }
+
+    .scroll-indicator__pill svg {
+        width: 10px;
+        height: 23px;
+    }
+
+    .right-lateral__social svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .right-lateral__mail-icon svg {
+        width: 30px;
+        height: 24px;
+    }
 }

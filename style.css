@@ -22,6 +22,7 @@ body {
     background: var(--background-color);
 }
 
+
 * {
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -49,16 +50,16 @@ body {
     .section-intro__label {
         color: var(--primary-color);
         font-family: fira-code, 'sans-serif';
-        font-size: 4rem;
+        font-size: 2rem;
         margin: 0;
-        padding: 100px 0 20px;
+        padding: 100px 0 16px;
         text-align: center;
     }
 
     .subtitle {
         color: var(--primary-color);
         font-family: fira-code, 'sans-serif';
-        font-size: 2rem;
+        font-size: 1.25rem;
         margin: 0;
         text-align: center;
     }
@@ -67,7 +68,8 @@ body {
         margin: 0;
         color: var(--primary-color);
         font-family: karla, 'sans-serif';
-        padding: 1rem 100px;
+        padding: 1rem;
+
 
         strong {
             color: white;
@@ -86,7 +88,7 @@ body {
 
     p:last-of-type {
         margin-bottom: 0;
-        padding: 2rem 100px;
+        padding: 2rem 1rem;
     }
 }
 

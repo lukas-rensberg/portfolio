@@ -1,5 +1,6 @@
 section.featured-projects {
-    padding: 70px 100px;
+    padding-block: clamp(40px, 6vw, 70px);
+    padding-inline: max(clamp(16px, 5vw, 100px), calc((100% - 1920px) / 2));
     display: flex;
     flex-direction: column;
     align-self: flex-start;
@@ -16,7 +17,7 @@ section.featured-projects {
 
     h2 {
         margin: 0;
-        font-size: 62px;
+        font-size: clamp(32px, 5vw, 62px);
         font-family: fira-code, 'sans-serif';
         font-weight: bold;
         color: var(--primary-color);
@@ -38,12 +39,13 @@ section.featured-projects {
     .projects-wrapper {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         align-items: flex-start;
         position: relative;
     }
 
     .projects-list {
-        flex: 0 0 60%;
+        flex: 1 1 min(100%, 60%);
         display: flex;
         flex-direction: column;
         border-top: 2px solid var(--primary-color);
@@ -69,7 +71,7 @@ section.featured-projects {
 
     .project-name {
         font-family: 'fira-code', monospace;
-        font-size: 22px;
+        font-size: clamp(16px, 2vw, 22px);
         font-weight: bold;
         color: #fff;
         margin: 0;
@@ -193,7 +195,7 @@ section.featured-projects {
 
     .dialog-number {
         font-family: 'karla', sans-serif;
-        font-size: 110px;
+        font-size: clamp(60px, 8vw, 110px);
         font-weight: bold;
         color: var(--primary-color);
         line-height: 1;
@@ -201,7 +203,7 @@ section.featured-projects {
 
     .dialog-title {
         font-family: 'fira-code', monospace;
-        font-size: 52px;
+        font-size: clamp(28px, 4vw, 52px);
         font-weight: bold;
         color: #fff;
         margin: 0;
@@ -357,6 +359,12 @@ section.featured-projects {
         object-fit: contain;
         border-radius: 10px;
         box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    @media (max-width: 768px) {
+        .projects-preview-col {
+            display: none;
+        }
     }
 
     @media (max-width: 640px) {

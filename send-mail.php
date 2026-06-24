@@ -14,7 +14,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
     case 'POST':
 
-        $whitelist = ['127.0.0.1', '::1'];
+        $whitelist = ['127.0.0.1', '0:0:0:0:0:0:0:1'];
 
         if (in_array($_SERVER['REMOTE_ADDR'], $whitelist)) {
             $json = file_get_contents('php://input');
@@ -22,7 +22,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
             if (json_last_error() !== JSON_ERROR_NONE) {
                 http_response_code(400);
-                echo json_encode(['success' => false, 'error' => 'Invalid JSON']);
+                echo json_encode(['success' => false, 'error' => 'Invalid JSON', 'json_error' => json_last_error(), 'params' => $json]);
                 exit;
             }
 
@@ -65,15 +65,64 @@ switch ($_SERVER['REQUEST_METHOD']) {
                 '-f ' . $siteEmail
             );
 
-            if ($success) {
+            $headersUserInfo = [];
+            $headersUserInfo[] = 'MIME-Version: 1.0';
+            $headersUserInfo[] = 'Content-type: text/html; charset=utf-8';
+            $headersUserInfo[] = 'From: Contact Form Portfolio <' . $siteEmail . '>';
+            $headersUserInfo[] = 'Reply-To: ' . $siteEmail;
+            $headersUserInfo[] = 'Return-Path: ' . $siteEmail;
+
+            $subjectUserInfo = 'Thank You for Contacting Me';
+
+            $mailBodyUserInfo = "
+<p><strong>--- Deutsche Version unten ---</strong></p>
+
+<p>Hi,</p>
+
+<p>Thank you for your inquiry. I have received your message.</p>
+
+<p>I am currently reviewing your request and will get back to you within <strong>24–48 business hours</strong>.</p>
+
+<p>Thank you for your patience.</p>
+
+<p>Kind regards,<br>
+Lukas Rensberg</p>
+
+<hr>
+
+<p><strong>--- Deutsche Version ---</strong></p>
+
+<p>Hallo,</p>
+
+<p>vielen Dank für deine Anfrage. Ich habe deine Nachricht erhalten.</p>
+
+<p>Ich prüfe dein Anliegen derzeit und werde mich innerhalb von <strong>1-2 Werktagen</strong> bei dir zurückmelden.</p>
+
+<p>Vielen Dank für deine Geduld.</p>
+
+<p>Mit freundlichen Grüßen<br>
+Lukas Rensberg</p>
+            ";
+
+            $userInfoSuccess = mail(
+                $email,
+                $subjectUserInfo,
+                $mailBodyUserInfo,
+                implode("\r\n", $headersUserInfo),
+                '-f ' . $siteEmail
+            );
+
+
+
+            if ($success && $userInfoSuccess) {
                 echo json_encode(['success' => true]);
             } else {
                 http_response_code(500);
-                echo json_encode(['success' => false, 'error' => 'Mail delivery failed']);
+                echo json_encode(['success' => false, '$success' => $success, '$userInfoSuccess' => $userInfoSuccess, 'error' => 'Mail delivery failed']);
             }
         } else {
-            http_response_code(405);
-            echo json_encode(['success' => false, 'error' => 'Permission denied!' ]);
+            http_response_code(403);
+            echo json_encode(['success' => false, 'error' => 'Permission denied!', 'ip' => $_SERVER['REMOTE_ADDR'] ]);
         }
 
         break;
